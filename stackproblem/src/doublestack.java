@@ -69,7 +69,7 @@ public class doublestack {
 		s3.push2(13);
 		s3.push1(14);
 		s3.push2(15);
-		System.out.println(s3.pop1());
+		System.out.println(s3.pop1()); 
 	}
 
 }

@@ -1,11 +1,11 @@
-//program to convert infix expression to postfix expression using stack
+//program to convert infix expression to prefix expression using stack
 import java.util.*;
-class stackd
+class stack8
 {
 	private	char[] a;
     private  int s;
     private  int top;
-        stackd(int size)
+        stack8(int size)
         {
         	s=size;
         	a=new char[s];
@@ -49,12 +49,12 @@ class stackd
         
 }
 
-public class infix2postfix {
+public class infix2prefix {
 
 	static String input(String x)
 	{
 	String s=new String(" ");
-	stackd st=new stackd(20);
+	stack8 st=new stack8(20);
 	int i;
 	for(i=0;i<x.length();i++)
 	{
@@ -94,14 +94,31 @@ public class infix2postfix {
 	{
 		s=s+st.pop();
 	}
-	return s;
+	System.out.println(s);
+	String r="";
+	int le=s.length();
+	int m;
+	for(m=0;m<le;m++)
+	{
+		r=r+s.charAt(le-m-1);
+	}
+	
+	return r;
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
-		System.out.println("enter an expression");
+		System.out.println("enter an infix expression");
 		String str=sc.next();
-		System.out.println("expression in postfix");
-		System.out.println(input(str));
+		System.out.println("expression in prefix");
+		int i;
+		String re="";
+		int n=str.length();
+		for(i=0;i<str.length();i++)
+		{
+			re=re+str.charAt(n-i-1);
+		}
+		System.out.println(input(re));
 	}
 }
+
